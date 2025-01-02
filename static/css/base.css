@@ -1,3 +1,49 @@
 h1{
-    color: aqua;
+    color: red;
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+header {
+    background-color: #333;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    
+    nav a {
+        padding: 12px 0;
+    }
 }

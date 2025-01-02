@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    
+        <div class="song-entry">
+            <h2><a href="#">{{ song.title }}</a></h2>
+            <p>Artist: {{ song.artist }}</p>
+            <p>Genre: {{ song.genre }}</p>
+            <p>Release Date: {{ song.release_date }}</p>
+        </div>
+        <a href="{% url 'song_update' song.pk %}"> Edit Song Details</a>
+        <a href="{% url 'song_delete' song.pk %}"> Delete Song </a>
+{% endblock content %}

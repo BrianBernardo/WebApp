@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Edit Song</h1>
+    <form action="{% url 'song_delete' object.pk %}" method="post">
+        {% csrf_token %}  
+        <p>delete song "{{song.title}}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock content %}
