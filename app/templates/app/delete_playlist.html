@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/delete_playlist.css' %}">
+
+<div class="delete-playlist-container">
+    <h1 class="delete-playlist-title">Are you sure you want to delete the playlist "{{ playlist.name }}"?</h1>
+    
+    <form method="post" class="delete-playlist-form">
+        {% csrf_token %}
+        <button type="submit" class="btn delete-btn">Yes, Delete</button>
+        <a href="{% url 'playlist_list' %}" class="btn cancel-btn">Cancel</a>
+    </form>
+</div>
+{% endblock %}

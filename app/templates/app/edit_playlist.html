@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/edit_playlist.css' %}">
+
+
+  <div class="edit-playlist-container">
+    <h1 class="edit-playlist-title">Edit Playlist - {{ playlist.name }}</h1>
+    
+    <form method="post" class="edit-playlist-form">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+      <button type="submit" class="btn update-btn">Update Playlist</button>
+    </form>
+  </div>
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/edit_playlist.css' %}">
+{% endblock %}

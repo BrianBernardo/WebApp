@@ -1,0 +1,273 @@
+
+.song-entry {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.song-entry h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 600;
+}
+
+.song-entry .song-title {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.song-entry .song-title:hover {
+    color: #f44336;
+}
+
+.average-rating h3{
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 600;
+}
+
+.song-details p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.song-details strong {
+    color: #333;
+}
+
+
+.song-moods {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.song-moods strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.song-moods .mood-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.song-moods .mood-item {
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 6px;
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+}
+
+
+.youtube-video {
+    margin-top: 30px;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.youtube-video iframe {
+    width: 80%;
+    height: 400px;
+    border-radius: 8px;
+}
+
+
+.song-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.song-actions .btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.edit-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.song-actions .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.song-actions .btn:focus {
+    outline: none;
+}
+/* Song details */
+.song-entry {
+    margin-bottom: 30px;
+}
+
+.song-details p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.song-moods {
+    margin-top: 20px;
+}
+
+.mood-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mood-item {
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* YouTube Embed */
+.youtube-video {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 100%; /* Ensures it doesn’t exceed the container’s width */
+}
+
+.youtube-video iframe {
+    width: 100%; /* Adjust iframe width to fill the container */
+    height: 315px; /* Fixed height to prevent resizing */
+    max-width: 800px; /* Optional, set a max width for larger screens */
+    border-radius: 8px;
+}
+/* Comments Section */
+/* Comment Section */
+.comments-section {
+    margin-top: 30px;
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+    padding-left: 20px; /* Add padding to the left side */
+    padding-right: 20px; /* Optional, can be adjusted */
+}
+
+.comments-section h3 {
+    font-size: 1.4em;
+    color: #444;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comment-item {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.comment-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-left: 10px;
+}
+
+.comment-content {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Comment Form */
+.comment-form {
+    margin-top: 30px;
+    padding-left: 20px; /* Add padding to the left to space it away from the edge */
+}
+
+.comment-form h3 {
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.comment-form form {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 10px; /* Space between the text area and button */
+}
+
+.comment-form form .form-control {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    flex-grow: 1; /* Allow text box to grow */
+    resize: vertical; /* Allow the textarea to be resizable */
+}
+
+.comment-form form button.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Keep button width automatic */
+    max-width: 200px; /* Adjust button width */
+}
+
+.comment-form form button.submit-btn:hover {
+    background-color: #0056b3;
+}
+.song-rating {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.song-rating form {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.song-rating .btn.submit-rating-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.song-rating .btn.submit-rating-btn:hover {
+    background-color: #218838;
+}

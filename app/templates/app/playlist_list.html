@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/playlist_list.css' %}">
+
+  <div class="playlist-list-container">
+    <h1 class="playlist-title">Your Playlists</h1>
+
+    <div class="playlist-actions">
+      <a href="{% url 'create_playlist' %}" class="btn create-btn">Create New Playlist</a>
+    </div>
+
+    <ul class="playlist-list">
+      {% for playlist in playlists %}
+        <li class="playlist-item">
+          <a href="{% url 'playlist_detail' playlist.id %}" class="playlist-link">{{ playlist.name }}</a>
+          <div class="playlist-buttons">
+            <a href="{% url 'edit_playlist' playlist.id %}" class="btn edit-btn">Edit</a>
+            <a href="{% url 'delete_playlist' playlist.id %}" class="btn delete-btn">Delete</a>
+          </div>
+        </li>
+      {% empty %}
+        <li class="empty-message">No playlists available.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/playlist_list.css' %}">
+{% endblock %}

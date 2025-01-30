@@ -1,5 +1,31 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-    <h1>hello world</h1>
-{% endblock content %}
+<div class="mood-container">
+    <h1>Pick Your Mood</h1>
+    <form method="GET" action="{% url 'main_page' %}" class="mood-form">
+        <label for="mood">Choose a Mood:</label>
+        <select name="mood" id="mood">
+            {% for mood in moods %}
+                <option value="{{ mood.name }}" {% if mood.name == selected_mood %}selected{% endif %}>
+                    {{ mood.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="mood-btn">Show Songs</button>
+    </form>
+
+    {% if songs %}
+        <h2>Songs for Mood: {{ selected_mood }}</h2>
+        <ul class="song-list">
+            {% for song in songs %}
+                <li class="song-item">
+                    <a href="{{ song.get_absolute_url }}">{{ song.title }} by {{ song.artist }}</a>
+                </li>
+            {% empty %}
+                <li class="no-songs">No songs available for this mood.</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}

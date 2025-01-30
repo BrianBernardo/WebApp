@@ -1,0 +1,87 @@
+/* Container for edit playlist form */
+.edit-playlist-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+
+/* Title */
+.edit-playlist-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form styling */
+.edit-playlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: black;
+}
+
+
+/* Input fields */
+.edit-playlist-form input,
+.edit-playlist-form textarea,
+.edit-playlist-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Submit button */
+.update-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
+/* Ensure form fields are displayed properly */
+.form-group p {
+    display: flex;
+    align-items: center; /* Align checkbox and label */
+    gap: 8px; /* Add spacing between checkbox and label */
+}
+
+/* Ensure checkboxes align properly */
+.form-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px 0 0; /* Adjust margins */
+    vertical-align: middle;
+}
+
+/* Adjust label alignment */
+.form-group label {
+    font-size: 16px;
+    color: #222;
+    cursor: pointer;
+    vertical-align: middle;
+}

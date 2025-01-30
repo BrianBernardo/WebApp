@@ -1,13 +1,93 @@
 {% extends 'app/base.html' %}
 {% load static %}
+
 {% block content %}
-    
-        <div class="song-entry">
-            <h2><a href="#">{{ song.title }}</a></h2>
-            <p>Artist: {{ song.artist }}</p>
-            <p>Genre: {{ song.genre }}</p>
-            <p>Release Date: {{ song.release_date }}</p>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/songDetails.css' %}">
+
+    <!-- Song Title and Rating Section -->
+    <div class="song-entry">
+        <h2 class="song-title">{{ song.title }}</h2>
+        <div class="average-rating">
+            <h3>Average Rating: {{ avg_rating }} / 5</h3>
         </div>
-        <a href="{% url 'song_update' song.pk %}"> Edit Song Details</a>
-        <a href="{% url 'song_delete' song.pk %}"> Delete Song </a>
+
+        <div class="song-rating">
+            <h3>
+                {% if user_rating %}
+                <span class="user-rating">Your Rating: {{ user_rating }}/5</span>
+            {% else %}
+                <form method="POST" class="rating-form">
+                    {% csrf_token %}
+                    {{ rating_form.as_p }}  <!-- This will render a dropdown menu -->
+                    <button type="submit" class="btn submit-rating-btn">Submit Rating</button>
+                </form>
+            {% endif %}
+            </h3>
+        </div>
+        
+        <div class="song-details">
+            <p><strong>Artist:</strong> {{ song.artist }}</p>
+            <p><strong>Genre:</strong> {{ song.genre }}</p>
+            <p><strong>Release Date:</strong> {{ song.release_date }}</p>
+        </div>
+    </div>
+
+    <div class="song-moods">
+        <strong>Moods for this song:</strong>
+        {% if song.moods.all %}
+            <div class="mood-list">
+                {% for mood in song.moods.all %}
+                    <span class="mood-item">{{ mood.name }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h1>No moods available for this song.</h1>
+        {% endif %}
+    </div>
+
+    {% if song.youtube_embed_code %}
+        <div class="youtube-video">
+            {{ song.youtube_embed_code|safe }}
+        </div>
+    {% else %}
+        <h1>No video available for this song.</h1>
+    {% endif %}
+
+    {% if user == song.user %}
+        <div class="song-actions">
+            <a href="{% url 'song_update' song.pk %}" class="btn edit-btn">Edit Song Details</a>
+            <a href="{% url 'song_delete' song.pk %}" class="btn delete-btn">Delete Song</a>
+        </div>
+    {% endif %}
+
+    <!-- Display Comments -->
+    <div class="comments-section">
+        <h3>Comments</h3>
+        {% if comments %}
+            <ul class="comment-list">
+                {% for comment in comments %}
+                    <li class="comment-item">
+                        <div class="comment-header">
+                            <strong>{{ comment.user.username }}</strong> - 
+                            <span class="comment-date">{{ comment.created_at|date:"F d, Y H:i" }}</span>
+                        </div>
+                        <p class="comment-content">{{ comment.content }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endif %}
+    </div>
+
+    <!-- Comment Form -->
+    <div class="comment-form">
+        <h3>Leave a Comment</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn submit-btn">Submit Comment</button>
+        </form>
+    </div>
+
 {% endblock content %}

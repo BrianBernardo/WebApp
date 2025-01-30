@@ -1,0 +1,84 @@
+/* Container for playlist details */
+.playlist-details-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+
+.playlist-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+.playlist-subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+.playlist-song-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.playlist-song-item {
+    font-size: 18px;
+    color: #444;
+    padding: 5px 0;
+}
+
+
+.playlist-song-list a {
+    font-size: 16px;
+    color: #999;
+}
+.playlist-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336; 
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.delete-btn:active {
+    background-color: #d32f2f;
+}
+
+

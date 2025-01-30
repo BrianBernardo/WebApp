@@ -1,10 +1,15 @@
 {% extends 'app/base.html' %}
 {% load static %}
+
 {% block content %}
-    <h1>Edit Song</h1>
-    <form action="{% url 'song_delete' object.pk %}" method="post">
-        {% csrf_token %}  
-        <p>delete song "{{song.title}}"?</p>
-        <input type="submit" value="Confirm">
-    </form>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/delete_song.css' %}">
+    
+    <div class="delete-song-container">
+        <h1>Delete Song</h1>
+        <form action="{% url 'song_delete' object.pk %}" method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete the song "{{ song.title }}"?</p>
+            <input type="submit" value="Confirm">
+        </form>
+    </div>
 {% endblock content %}

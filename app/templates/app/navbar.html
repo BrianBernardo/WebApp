@@ -1,7 +1,21 @@
-<header>
-    <nav>
-        <a href="{% url 'home' %}"> Home </a>
-        <a href="{% url 'about' %}"> About </a>
-        <a href="{% url 'song' %}"> Songs </a>
-    </nav>
-</header>
+<nav>
+    <a href="{% url 'main_page' %}">Home</a>
+    <a href="{% url 'song' %}">Recently Added Songs</a>
+    <a href="{% url 'new_song' %}">+ Add a Song</a>
+
+    {% if user.is_authenticated %}
+        
+        <a href="{% url 'playlist_list' %}">My Playlists</a>  
+        <a href="{% url 'create_playlist' %}">+ Create Playlist</a> 
+        
+        <div class="user-info">
+            <p>Hello {{ user.username }}</p>
+            <form action="{% url 'logout' %}" method="post" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        </div>
+    {% else %}
+        <a href="{% url 'login' %}" class="login-link">Login</a>
+    {% endif %}
+</nav>

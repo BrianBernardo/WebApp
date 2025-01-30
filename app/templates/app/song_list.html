@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h2>Songs for Mood: {{ selected_mood }}</h2>
+<ul>
+    {% for song in songs %}
+        <li>
+            <a href="{{ song.get_absolute_url }}">{{ song.title }} by {{ song.artist }}</a>
+        </li>
+    {% empty %}
+        <li>No songs available for this mood.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

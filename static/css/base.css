@@ -1,7 +1,4 @@
-h1{
-    color: red;
-}
-/* Basic Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,40 +7,162 @@ h1{
 
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #fbc2eb);
+    color: #F8F8FF; 
 }
 
-/* Navbar Styling */
+
 header {
     background-color: #333;
     color: white;
 }
 
+
 nav {
+    background-color: #2E0854; 
+    padding: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 nav a {
-    color: white;
+    color: #F8F8FF; 
     text-decoration: none;
-    padding: 10px 20px;
-    text-align: center;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #575757;
+    color: #FF4500; 
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-    
-    nav a {
-        padding: 12px 0;
-    }
+nav a.active {
+    color: #1CE9B6;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    background-color: #2E0854; 
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.user-info p {
+    margin: 0;
+    color: #F8F8FF;
+    font-weight: bold;
+}
+
+.logout-btn {
+    background-color: #4B0082;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #FF4500;
+}
+
+
+.youtube-video iframe {
+    width: 100%;
+    max-width: 560px; 
+    height: auto;
+    aspect-ratio: 16/9;
+    border: none;
+    margin-top: 15px;
+}
+
+
+.mood-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+
+.mood-container h1 {
+    color: #F8F8FF;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.mood-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.mood-form select {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #F8F8FF;
+    color: #333;
+    cursor: pointer;
+}
+
+
+.mood-btn {
+    background-color: #4B0082;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mood-btn:hover {
+    background-color: #FF4500;
+}
+
+
+.song-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.song-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background 0.3s;
+}
+
+.song-item a {
+    text-decoration: none;
+    color: #F8F8FF;
+    font-weight: bold;
+}
+
+.song-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+.no-songs {
+    color: #FF4500;
+    font-weight: bold;
+    margin-top: 10px;
 }

@@ -1,11 +1,17 @@
 {% extends 'app/base.html' %}
 {% load static %}
+
 {% block content %}
-<a href="{% url 'new_song'  %}">+ add a song</a>
-    {% for song in songs %}
-        <div class="song-entry">
-            <h2><a href="{% url 'song_detail' song.pk %}">{{ song.title }}</a></h2>
-            <p>Artist: {{ song.artist }}</p>
-        </div>
-    {% endfor %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/song_list.css' %}">
+
+    <div class="song-list-container">
+        <h1>Recently Added Songs</h1>
+
+        {% for song in songs %}
+            <div class="song-entry">
+                <h2><a href="{% url 'song_detail' song.pk %}" class="song-title">{{ song.title }}</a></h2>
+                <p>Artist: {{ song.artist }}</p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock content %}

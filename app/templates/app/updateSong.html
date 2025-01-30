@@ -1,10 +1,16 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>Edit Song</h1>
-    <form action="{% url 'song_update' object.pk %}" method="post">
-        {% csrf_token %}  
-        {{form.as_p}}
-        <input type="submit" value="Update">
-    </form>
+<link rel="stylesheet" href="{% static 'css/addSong.css' %}">
+
+    <div class="add-song-container">
+        <h1>Edit Song</h1>
+            <form action="{% url 'song_update' pk=object.pk %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}  
+            </div>
+            <button type="submit" class="submit-btn">Save Song</button>
+        </form>
+    </div>
 {% endblock content %}

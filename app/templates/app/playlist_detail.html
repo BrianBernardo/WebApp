@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/playlist_detail.css' %}">
+  
+  <div class="playlist-details-container">
+    <h1 class="playlist-title">{{ playlist.name }}</h1>
+    <h3 class="playlist-subtitle">Songs in this playlist:</h3>
+    <ul class="playlist-song-list">
+      {% for song in playlist.songs.all %}
+      <a href="{% url 'song_detail' song.pk %}" class="song-title">{{ song.title }} by {{song.artist}}</a> <br> <br></h2>
+      {% empty %}
+        <li>No songs in this playlist.</li>
+      {% endfor %}
+    </ul>
+
+    {% if user == playlist.user %}
+      <div class="playlist-actions">
+          <a href="{% url 'edit_playlist' playlist.id %}" class="btn edit-btn">Edit Playlist</a>
+          <a href="{% url 'delete_playlist' playlist.id %}" class="btn delete-btn" onclick="return confirm('Are you sure you want to delete this playlist?')">Delete Playlist</a>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
